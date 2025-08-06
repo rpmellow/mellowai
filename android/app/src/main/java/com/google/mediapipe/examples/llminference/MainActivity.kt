@@ -104,13 +104,7 @@ class MainActivity : ComponentActivity() {
             modifier = Modifier.fillMaxWidth()
         ) {
             TopAppBar(
-                title = { Text(
-                                text=stringResource(R.string.app_name)
-                                style= MaterialTheme.typography.titleLarge.copy(
-                                    fontFamily = FontFamily.Cursive
-                                )
-                            ) 
-                        },
+                title = { Text(text=stringResource(R.string.app_name))},
                 colors = TopAppBarDefaults.topAppBarColors(
                     containerColor = MaterialTheme.colorScheme.primaryContainer,
                     titleContentColor = MaterialTheme.colorScheme.primary,
