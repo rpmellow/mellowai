@@ -16,3 +16,9 @@ cd mellowai/android/
 ```
 ./gradlew assembleDebug
 ```
+
+## Download APK from Azure
+
+```
+scp -i key_file.pem azureuser@<IP Address>:/home/azureuser/mellowai/android/app/build/outputs/apk/debug/app-debug.apk /<your dir path>/
+```
