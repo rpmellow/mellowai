@@ -51,7 +51,7 @@ def setup_sdk():
 
 def get_code():
     os.system("chmod 777 /home/azureuser/mellowai/android/")
-    os.system("wget -P /home/azureuser/mellowai/android/gradle/wrapper/ services.gradle.org/distributions/gradle-8.2-bin.zip")
+    os.system("wget -P /home/azureuser/ services.gradle.org/distributions/gradle-8.2-bin.zip")
 
 
 def build_gradle():
