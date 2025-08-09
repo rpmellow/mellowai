@@ -29,6 +29,7 @@ import com.google.mediapipe.examples.llminference.ui.theme.LLMInferenceTheme
 const val START_SCREEN = "start_screen"
 const val LOAD_SCREEN = "load_screen"
 const val CHAT_SCREEN = "chat_screen"
+const val TEST_SCREEN = "test_screen"
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -52,6 +53,7 @@ class MainActivity : ComponentActivity() {
                             navController = navController,
                             startDestination = startDestination
                         ) {
+                            
                             composable(START_SCREEN) {
                                 SelectionRoute(
                                     onModelSelected = {
@@ -89,8 +91,22 @@ class MainActivity : ComponentActivity() {
                                         }
                                     })
                             }
+
+                            composable(TEST_SCREEN) {
+                                        TestPage()
+                                    }
+
                         }
                     }
+
+                     Button(
+                                onClick = { navController.navigate(TEST_SCREEN) },
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .padding(16.dp)
+                            ) {
+                                Text("Go to Test Page")
+                            }
                 }
             }
         }
@@ -104,7 +120,13 @@ class MainActivity : ComponentActivity() {
             modifier = Modifier.fillMaxWidth()
         ) {
             TopAppBar(
-                title = { Text(text=stringResource(R.string.app_name))},
+                title = { Text(
+                                text=stringResource(R.string.app_name)
+                                style= MaterialTheme.typography.titleLarge.copy(
+                                    fontFamily = FontFamily.Cursive
+                                )
+                            ) 
+                        },
                 colors = TopAppBarDefaults.topAppBarColors(
                     containerColor = MaterialTheme.colorScheme.primaryContainer,
                     titleContentColor = MaterialTheme.colorScheme.primary,
